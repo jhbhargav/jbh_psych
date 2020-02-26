@@ -1,5 +1,7 @@
 package com.psych.game.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +17,7 @@ public class PlayerAnswer extends Auditable {
     @NotNull
     @ManyToOne
     @Getter
+    @JsonBackReference
     @Setter
     private Round round;
 
@@ -22,6 +25,7 @@ public class PlayerAnswer extends Auditable {
     @ManyToOne
     @Getter
     @Setter
+    @JsonIdentityReference
     private Player player;
 
     @NotBlank
